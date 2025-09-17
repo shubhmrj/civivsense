@@ -1,0 +1,36 @@
+{
+  "name": "civic-reporting-blockchain",
+  "version": "1.0.0",
+  "description": "Blockchain smart contracts for SIH Civic Issue Reporting System",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:testnet": "hardhat run scripts/deploy.js --network mumbai",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network polygon",
+    "verify": "hardhat verify --network mumbai"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "web3": "^4.3.0",
+    "ethers": "^6.8.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.2",
+    "hardhat": "^2.19.1",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "chai": "^4.3.10",
+    "ethereum-waffle": "^4.0.10"
+  },
+  "keywords": [
+    "blockchain",
+    "smart-contracts",
+    "civic",
+    "ethereum",
+    "polygon"
+  ],
+  "author": "SIH Team",
+  "license": "MIT"
+}
