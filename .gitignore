@@ -124,3 +124,14 @@ dist
 .pnp.*
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node
+
+*.idea
+*.gitignore
+*.git
+
+# React Native Stack Base
+
+.expo
+__generated__
+
+*.expo

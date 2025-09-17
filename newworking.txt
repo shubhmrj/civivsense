@@ -1,0 +1,86 @@
+🛠 How the Project Works (Step by Step)
+1. Citizen Reporting
+
+User opens the mobile app.
+
+Takes photo/video of the issue (pothole, garbage, streetlight, etc.).
+
+Adds short description (or speaks → voice-to-text).
+
+Location is captured automatically (GPS).
+
+Report is submitted.
+
+2. AI/ML Processing
+
+Image Analysis → AI model checks if it’s a pothole, garbage, broken streetlight, etc.
+
+Text/NLP Analysis → Reads the description, validates issue type.
+
+Duplicate Check → ML compares with nearby reports to avoid spam/duplicates.
+
+Priority Scoring → AI assigns urgency score based on severity, keywords, and clustering (e.g., “major accident” > “small pothole”).
+
+3. Blockchain Storage
+
+Once verified by AI → report metadata (report ID, type, location, priority, timestamps, reporter ID) is stored on blockchain.
+
+Media (image/video) stored on IPFS / cloud storage → hash saved on blockchain (immutability).
+
+Blockchain ensures transparency + no tampering.
+
+Smart Contracts automatically:
+
+Assign report to correct municipal department.
+
+Start SLA countdown (time limit for resolution).
+
+Lock status updates (citizens can trust data is not faked).
+
+4. Routing & Task Assignment
+
+Smart Contract triggers → sends task to department dashboard.
+
+Example:
+
+Garbage issue → Sanitation Dept.
+
+Pothole → Public Works Dept.
+
+Department staff see issues sorted by AI priority + blockchain timestamp.
+
+5. Tracking & Notifications
+
+Citizen gets a unique blockchain ID for their report.
+
+They can check progress: submitted → acknowledged → assigned → resolved.
+
+Push notifications/SMS at each stage.
+
+If SLA breached → smart contract flags it, escalates to higher officials.
+
+6. Resolution & Closure
+
+Municipal staff fix the issue (clean garbage, repair road, etc.).
+
+They upload before/after photo/video.
+
+AI model verifies if issue looks resolved (e.g., pothole no longer visible).
+
+Blockchain updates status → resolution timestamp recorded.
+
+Citizen notified + report closed.
+
+7. Analytics & Insights
+
+AI Dashboard:
+
+Hotspot maps (areas with most issues).
+
+SLA compliance rate.
+
+Department performance (avg resolution time).
+
+Predictive AI:
+
+Forecast future civic issues (e.g., “this area likely to flood if heavy rain occurs”).

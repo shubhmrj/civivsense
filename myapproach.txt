@@ -1,0 +1,45 @@
+1. System components (top-level)
+
+Mobile App / PWA (Citizen)
+
+Photo/video capture, GPS, text/voice input, optional anonymity, presigned upload to storage, submit report metadata.
+
+Ingestion API (Backend)
+
+Receives report metadata, returns presigned S3/IPFS upload URL, writes minimal record to RDBMS, enqueues report for processing, triggers blockchain write (or schedules it as transaction via relayer).
+
+Off-chain DB + Geo Layer
+
+PostgreSQL + PostGIS for geo queries, ward/department mapping, clustering, scoreboard and reporting.
+
+Media Storage
+
+IPFS (for content-addressable storage) or S3 + CDN. For blockchain linking, use IPFS CID or signed S3 presigned URL + anchor hash on chain.
+
+ML/AI Microservices
+
+Image classifier, NLP for text/voice, severity scoring, duplicate detection, clustering/hotspot detection, SLA prediction. Exposed via REST/gRPC. Use GPU nodes for training, CPU for inference.
+
+Smart Contracts (Blockchain Layer)
+
+Report Registry (immutable baseline), SLA/Assignment contract, Reputation & Token contract (incentives), Auditor contract (evidence pointers), Admin governance contract.
+
+Oracles / Relayer
+
+Trusted relayer service (or decentralized oracle) writes off-chain verified events to the chain; signs transactions from municipal authority key(s) or automated system wallet.
+
+Admin Portal (Web)
+
+Map UI, assignment workflows, manual override, wallet integrations for payouts, analytics views.
+
+Event Bus & Queue
+
+Kafka/RabbitMQ for async decoupling: ingestion → ML → media processing → notifications → blockchain relayer.
+
+Notification Service
+
+Push / SMS / Email; also emits events that might trigger blockchain-state changes (e.g., citizen confirms resolution → triggers reward).
+
+Monitoring & Observability
+
+Prometheus, Grafana, ELK, Sentry, contract monitoring.
